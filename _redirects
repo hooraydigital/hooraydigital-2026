@@ -1,0 +1,30 @@
+# 301 redirects from old WordPress site URLs to new static pages
+# These preserve SEO juice from Google-indexed pages
+
+/contact/                                             /contact.html                    301
+/contact                                              /contact.html                    301
+/recent-websites/                                     /our-work.html                   301
+/recent-websites                                      /our-work.html                   301
+/wordpress-brisbane/                                  /wordpress-woocommerce.html      301
+/wordpress-brisbane                                   /wordpress-woocommerce.html      301
+/wordpress-brisbane/wordpress-multisite-specialists/  /wordpress-woocommerce.html      301
+/wordpress-brisbane/wordpress-multisite-specialists   /wordpress-woocommerce.html      301
+/about-us/                                            /index.html#about                301
+/about-us                                             /index.html#about                301
+/shopify-development-brisbane/                        /shopify-ecommerce.html          301
+/shopify-development-brisbane                         /shopify-ecommerce.html          301
+/web-design-brisbane/                                 /web-design-ux.html              301
+/web-design-brisbane                                  /web-design-ux.html              301
+/web-design-brisbane/ecommerce-migrations/            /shopify-ecommerce.html          301
+/web-design-brisbane/ecommerce-migrations             /shopify-ecommerce.html          301
+/woocommerce-development-brisbane/                    /wordpress-woocommerce.html      301
+/woocommerce-development-brisbane                     /wordpress-woocommerce.html      301
+/digital-marketing-brisbane/                          /seo-digital-marketing.html      301
+/digital-marketing-brisbane                           /seo-digital-marketing.html      301
+/ai-integration-specialist/                           /ai-agents-automation.html       301
+/ai-integration-specialist                            /ai-agents-automation.html       301
+/website-design-blog/                                 /index.html                      301
+/website-design-blog                                  /index.html                      301
+/website-design-blog/*                                /index.html                      301
+/privacy-policy/                                      /index.html                      301
+/privacy-policy                                       /index.html                      301

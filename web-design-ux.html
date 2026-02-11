@@ -117,7 +117,7 @@ footer p { color: var(--grey); font-size: .95rem; font-weight: 500; }
 .stagger .reveal:nth-child(5) { transition-delay: .25s; }
 .stagger .reveal:nth-child(6) { transition-delay: .3s; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 
 
 /* Mobile hamburger menu */
@@ -145,6 +145,7 @@ html { scroll-behavior: smooth; }
 
 @media(max-width:1024px) { nav{padding:1.2rem 2rem} section{padding:4rem 2rem} .service-hero{padding:9rem 2rem 4rem} .sfg{grid-template-columns:1fr 1fr} .rwg{grid-template-columns:1fr} .ctab{margin:2rem;padding:3.5rem 2rem} footer{flex-direction:column;gap:1.5rem;text-align:center} .fl{flex-direction:column;gap:.75rem} }
 @media(max-width:640px) {
+  html { scroll-padding-top: 80px; }
   .nav-toggle { display: block; }
   .nav-links {
     display: none;

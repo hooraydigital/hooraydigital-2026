@@ -637,6 +637,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 110px;
     }
 
 
@@ -712,10 +713,13 @@
     }
 
     @media(max-width:640px) {
+      html {
+        scroll-padding-top: 80px;
+      }
+
       nav {
         padding: 1rem 1.25rem
       }
-
 
       .nav-toggle {
         display: block;

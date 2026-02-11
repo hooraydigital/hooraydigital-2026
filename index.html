@@ -281,6 +281,36 @@
       animation: fadeUp .8s ease forwards .8s;
     }
 
+    .scroll-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      margin-top: 3rem;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      text-decoration: none;
+      transition: color .3s;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.2s;
+    }
+
+    .scroll-hint:hover {
+      color: rgba(255,255,255,.6);
+    }
+
+    .scroll-arrow {
+      display: inline-block;
+      animation: bobDown 2s ease-in-out infinite;
+    }
+
+    @keyframes bobDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+
     .btn-p {
       display: inline-flex;
       align-items: center;
@@ -1358,6 +1388,7 @@
         <a href="contact.html" class="btn-p">Let's Talk &rarr;</a>
         <a href="#about" class="btn-o">See How We Play</a>
       </div>
+      <a href="#about" class="scroll-hint">Scroll down <span class="scroll-arrow">&darr;</span></a>
     </div>
   </section>
 

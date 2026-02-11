@@ -1,8 +1,7 @@
 # 301 redirects from old WordPress site URLs to new static pages
 # These preserve SEO juice from Google-indexed pages
 
-/contact/                                             /contact.html                    301
-/contact                                              /contact.html                    301
+# /contact/ and /contact are served directly by contact.html — no redirect needed
 /recent-websites/                                     /our-work.html                   301
 /recent-websites                                      /our-work.html                   301
 /wordpress-brisbane/                                  /wordpress-woocommerce.html      301

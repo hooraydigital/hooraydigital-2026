@@ -1,29 +1,29 @@
 # 301 redirects from old WordPress site URLs to new static pages
 # These preserve SEO juice from Google-indexed pages
+# Use clean URLs (no .html) — Cloudflare Pages strips extensions automatically
 
-# /contact/ and /contact are served directly by contact.html — no redirect needed
-/recent-websites/                                     /our-work.html                   301
-/recent-websites                                      /our-work.html                   301
-/wordpress-brisbane/                                  /wordpress-woocommerce.html      301
-/wordpress-brisbane                                   /wordpress-woocommerce.html      301
-/wordpress-brisbane/wordpress-multisite-specialists/  /wordpress-woocommerce.html      301
-/wordpress-brisbane/wordpress-multisite-specialists   /wordpress-woocommerce.html      301
-/about-us/                                            /index.html#about                301
-/about-us                                             /index.html#about                301
-/shopify-development-brisbane/                        /shopify-ecommerce.html          301
-/shopify-development-brisbane                         /shopify-ecommerce.html          301
-/web-design-brisbane/                                 /web-design-ux.html              301
-/web-design-brisbane                                  /web-design-ux.html              301
-/web-design-brisbane/ecommerce-migrations/            /shopify-ecommerce.html          301
-/web-design-brisbane/ecommerce-migrations             /shopify-ecommerce.html          301
-/woocommerce-development-brisbane/                    /wordpress-woocommerce.html      301
-/woocommerce-development-brisbane                     /wordpress-woocommerce.html      301
-/digital-marketing-brisbane/                          /seo-digital-marketing.html      301
-/digital-marketing-brisbane                           /seo-digital-marketing.html      301
-/ai-integration-specialist/                           /ai-agents-automation.html       301
-/ai-integration-specialist                            /ai-agents-automation.html       301
-/website-design-blog/                                 /index.html                      301
-/website-design-blog                                  /index.html                      301
-/website-design-blog/*                                /index.html                      301
-/privacy-policy/                                      /index.html                      301
-/privacy-policy                                       /index.html                      301
+/recent-websites/                                     /our-work                   301
+/recent-websites                                      /our-work                   301
+/wordpress-brisbane/                                  /wordpress-woocommerce      301
+/wordpress-brisbane                                   /wordpress-woocommerce      301
+/wordpress-brisbane/wordpress-multisite-specialists/  /wordpress-woocommerce      301
+/wordpress-brisbane/wordpress-multisite-specialists   /wordpress-woocommerce      301
+/about-us/                                            /#about                     301
+/about-us                                             /#about                     301
+/shopify-development-brisbane/                        /shopify-ecommerce          301
+/shopify-development-brisbane                         /shopify-ecommerce          301
+/web-design-brisbane/                                 /web-design-ux              301
+/web-design-brisbane                                  /web-design-ux              301
+/web-design-brisbane/ecommerce-migrations/            /shopify-ecommerce          301
+/web-design-brisbane/ecommerce-migrations             /shopify-ecommerce          301
+/woocommerce-development-brisbane/                    /wordpress-woocommerce      301
+/woocommerce-development-brisbane                     /wordpress-woocommerce      301
+/digital-marketing-brisbane/                          /seo-digital-marketing      301
+/digital-marketing-brisbane                           /seo-digital-marketing      301
+/ai-integration-specialist/                           /ai-agents-automation       301
+/ai-integration-specialist                            /ai-agents-automation       301
+/website-design-blog/                                 /                           301
+/website-design-blog                                  /                           301
+/website-design-blog/*                                /                           301
+/privacy-policy/                                      /                           301
+/privacy-policy                                       /                           301

@@ -23,8 +23,10 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.06); }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a { color: var(--grey); text-decoration: none; font-size: 1.05rem; font-weight: 500; transition: color .3s; }
 .nav-links a:hover { color: var(--blue-light); }
+.nav-links a:active { transform: scale(.95); transition: transform .08s; }
 .nav-cta { background: var(--blue) !important; color: #fff !important; padding: .6rem 1.5rem; border-radius: 6px; font-weight: 600 !important; transition: transform .3s, box-shadow .3s !important; }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(53,117,212,.35); }
+.nav-cta:active { transform: scale(.95) !important; box-shadow: 0 1px 8px rgba(53,117,212,.2) !important; transition: transform .08s, box-shadow .08s !important; }
 .nav-dropdown { position: relative; }
 .nav-dropdown-trigger { display: flex; align-items: center; gap: .3rem; cursor: pointer; }
 .nav-arrow { font-size: .65rem; transition: transform .3s; display: inline-block; }
@@ -34,6 +36,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.06); }
 .nav-dropdown-menu::before { content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px; }
 .nav-dropdown-menu a { display: block; padding: .65rem 1.25rem; color: var(--grey) !important; font-size: .95rem !important; font-weight: 500; text-decoration: none; transition: background .2s, color .2s, padding-left .2s; white-space: nowrap; }
 .nav-dropdown-menu a:hover { background: rgba(53,117,212,.06); color: var(--blue) !important; padding-left: 1.5rem; }
+.nav-dropdown-menu a:active { background: rgba(53,117,212,.12); transition: background .08s; }
 
 section { padding: 6rem 4rem; }
 .stag { text-transform: uppercase; font-size: .75rem; font-weight: 700; letter-spacing: .25em; color: var(--blue); margin-bottom: 1rem; display: flex; align-items: center; gap: .75rem; }
@@ -44,6 +47,7 @@ section { padding: 6rem 4rem; }
 
 .btn-p { display: inline-flex; align-items: center; gap: .5rem; background: var(--blue); color: #fff; padding: 1rem 2.2rem; font-family: 'Figtree', sans-serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 8px; transition: all .3s; }
 .btn-p:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(53,117,212,.35); background: var(--blue-light); }
+.btn-p:active { transform: scale(.96); box-shadow: 0 2px 8px rgba(53,117,212,.25); transition: transform .08s, box-shadow .08s; }
 
 /* Service hero */
 .service-hero { padding: 10rem 4rem 5rem; background: linear-gradient(135deg, rgba(53,117,212,.04), rgba(178,35,135,.02), #fff); position: relative; }
@@ -69,6 +73,7 @@ section { padding: 6rem 4rem; }
 .rwg { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
 .rwc { text-decoration: none; color: inherit; border-radius: 14px; overflow: hidden; border: 1px solid rgba(53,117,212,.1); background: var(--surface); transition: all .4s; display: block; position: relative; }
 .rwc:hover { border-color: rgba(53,117,212,.25); transform: translateY(-6px); box-shadow: 0 16px 48px rgba(53,117,212,.1); }
+.rwc:active { transform: scale(.98); box-shadow: 0 4px 16px rgba(53,117,212,.08); transition: transform .08s, box-shadow .08s; }
 .rwi { aspect-ratio: 4 / 3; position: relative; overflow: hidden; }
 .rwb { position: absolute; top: 0; left: 0; right: 0; height: 32px; background: #e2e3ea; display: flex; align-items: center; padding: 0 12px; z-index: 2; border-bottom: 1px solid rgba(0,0,0,.06); }
 .rwbd { display: flex; gap: 6px; margin-right: 12px; }
@@ -101,6 +106,7 @@ footer p { color: var(--grey); font-size: .95rem; font-weight: 500; }
 .flinks { display: flex; gap: 1.5rem; }
 .flinks a { color: var(--grey); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color .3s, transform .3s; }
 .flinks a:hover { color: var(--blue); transform: translateY(-1px); }
+.flinks a:active { transform: scale(.95); transition: transform .08s; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }

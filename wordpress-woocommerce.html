@@ -90,6 +90,11 @@
       color: var(--blue-light);
     }
 
+    .nav-links a:active {
+      transform: scale(.95);
+      transition: transform .08s;
+    }
+
     .nav-cta {
       background: var(--blue) !important;
       color: #fff !important;
@@ -102,6 +107,12 @@
     .nav-cta:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 24px rgba(53, 117, 212, .35);
+    }
+
+    .nav-cta:active {
+      transform: scale(.95) !important;
+      box-shadow: 0 1px 8px rgba(53, 117, 212, .2) !important;
+      transition: transform .08s, box-shadow .08s !important;
     }
 
     .nav-dropdown {
@@ -176,6 +187,11 @@
       padding-left: 1.5rem;
     }
 
+    .nav-dropdown-menu a:active {
+      background: rgba(53, 117, 212, .12);
+      transition: background .08s;
+    }
+
     section {
       padding: 6rem 4rem;
     }
@@ -244,6 +260,12 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 32px rgba(53, 117, 212, .35);
       background: var(--blue-light);
+    }
+
+    .btn-p:active {
+      transform: scale(.96);
+      box-shadow: 0 2px 8px rgba(53, 117, 212, .25);
+      transition: transform .08s, box-shadow .08s;
     }
 
     /* Service hero */
@@ -355,6 +377,12 @@
       border-color: rgba(53, 117, 212, .25);
       transform: translateY(-6px);
       box-shadow: 0 16px 48px rgba(53, 117, 212, .1);
+    }
+
+    .rwc:active {
+      transform: scale(.98);
+      box-shadow: 0 4px 16px rgba(53, 117, 212, .08);
+      transition: transform .08s, box-shadow .08s;
     }
 
     .rwi {
@@ -564,6 +592,11 @@
     .flinks a:hover {
       color: var(--blue);
       transform: translateY(-1px);
+    }
+
+    .flinks a:active {
+      transform: scale(.95);
+      transition: transform .08s;
     }
 
     @keyframes fadeUp {

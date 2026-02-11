@@ -4,9 +4,41 @@
       <stop offset="0%" stop-color="#3575D4"/>
       <stop offset="100%" stop-color="#2B5FB3"/>
     </linearGradient>
+    <style>
+      @keyframes show-h {
+        0%, 33.33% { opacity: 1; }
+        33.34%, 100% { opacity: 0; }
+      }
+      @keyframes show-d {
+        0%, 33.33% { opacity: 0; }
+        33.34%, 66.66% { opacity: 1; }
+        66.67%, 100% { opacity: 0; }
+      }
+      @keyframes show-ai {
+        0%, 66.66% { opacity: 0; }
+        66.67%, 100% { opacity: 1; }
+      }
+      .frame-h { animation: show-h 4.5s steps(1) infinite; }
+      .frame-d { animation: show-d 4.5s steps(1) infinite; }
+      .frame-ai { animation: show-ai 4.5s steps(1) infinite; }
+    </style>
   </defs>
   <rect width="512" height="512" rx="96" ry="96" fill="url(#bg)"/>
-  <g transform="translate(148, 133) scale(2.8)">
-    <path d="M56.8303 88.1372V0.125732H77.0729V88.1372H56.8303ZM0 88.1372V0H20.2426V88.1372H0ZM14.3333 52.5554V33.9473H67.6431V52.5554H14.3333Z" fill="white"/>
+
+  <!-- H (original, white) -->
+  <g class="frame-h" transform="translate(148, 133) scale(2.8)">
+    <path d="M56.83 88.14V0.13H77.07V88.14H56.83ZM0 88.14V0H20.24V88.14H0ZM14.33 52.56V33.95H67.64V52.56H14.33Z" fill="white"/>
+  </g>
+
+  <!-- D (white, centered) -->
+  <g class="frame-d" opacity="0">
+    <path d="M165 384V128h90c34 0 60.8 10.4 80.4 31.2C354.8 180 365 208 365 244v24c0 36-10.2 64-30.6 84.8C314.8 373.6 288 384 254 384H165zm58-210v164h30c20 0 35.2-7 46-20.8 10.8-14 16.2-33.6 16.2-58.4v-6c0-24.8-5.4-44.4-16.2-58.4-10.8-14-26-20.8-46-20.8h-28z" fill="white"/>
+  </g>
+
+  <!-- AI (#B22387, centered) -->
+  <g class="frame-ai" opacity="0">
+    <path d="M102 384h-60L130 128h58L276 384H216l-11.2-44H113.2L102 384zm22-88h46L148.8 198h-1.6L124 296z" fill="#B22387"/>
+    <path d="M320 384V176h-28V128h84v256H320z" fill="#B22387"/>
+    <circle cx="348" cy="108" r="22" fill="#B22387"/>
   </g>
 </svg>

@@ -53,7 +53,9 @@ section { padding: 6rem 4rem; }
 .btn-p:active { transform: scale(.96); box-shadow: 0 2px 8px rgba(53,117,212,.25); transition: transform .08s, box-shadow .08s; }
 
 /* Service hero */
-.service-hero { padding: 10rem 4rem 5rem; background: linear-gradient(135deg, rgba(53,117,212,.04), rgba(178,35,135,.02), #fff); position: relative; }
+.service-hero { padding: 10rem 4rem 5rem; background: linear-gradient(135deg, rgba(53,117,212,.04), rgba(178,35,135,.02), #fff); position: relative; overflow: hidden; }
+#hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.service-hero .stag, .service-hero h1, .service-hero .ssub, .service-hero .btn-p { position: relative; z-index: 1; }
 .service-hero h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 1.5rem; }
 .service-hero .ssub { margin-bottom: 2.5rem; }
 
@@ -225,6 +227,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 </nav>
 
 <section class="service-hero">
+  <canvas id="hero-canvas"></canvas>
   <div class="stag reveal">Web Design &amp; UX</div>
   <h1 class="reveal">Web Design &amp; UX <span class="hl">Strategy</span></h1>
   <p class="ssub reveal">Brisbane web design that&rsquo;s built on data, not guesswork. We create interfaces that look exceptional and convert visitors into customers &mdash; tested against real user behaviour before they go&nbsp;live.</p>
@@ -378,6 +381,63 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
       }
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  function initAnim(){
+    var canvas=document.getElementById('hero-canvas');if(!canvas)return;
+    var ctx=canvas.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),w,h,items=[],mobile;
+    function resize(){
+      var r=canvas.parentElement.getBoundingClientRect();w=r.width;h=r.height;
+      canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);build();
+    }
+    function build(){
+      items=[];mobile=w<640;var count=mobile?12:20;
+      for(var i=0;i<count;i++){
+        var t=Math.floor(Math.random()*6);// 0=wireframe,1=cursor,2=swatch,3=grid,4=typo,5=layer
+        items.push({x:Math.random()*w,y:Math.random()*h,type:t,size:mobile?20+Math.random()*25:30+Math.random()*40,
+          phase:Math.random()*Math.PI*2,speed:0.15+Math.random()*0.3,
+          drift:{x:(Math.random()-0.5)*0.06,y:(Math.random()-0.5)*0.05},
+          color:Math.random()<0.4?'178,35,135':'53,117,212'});
+      }
+    }
+    function rr(x,y,bw,bh,r){ctx.moveTo(x+r,y);ctx.lineTo(x+bw-r,y);ctx.arcTo(x+bw,y,x+bw,y+r,r);ctx.lineTo(x+bw,y+bh-r);ctx.arcTo(x+bw,y+bh,x+bw-r,y+bh,r);ctx.lineTo(x+r,y+bh);ctx.arcTo(x,y+bh,x,y+bh-r,r);ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);}
+    var time=0;
+    function draw(){
+      requestAnimationFrame(draw);time+=0.016;ctx.clearRect(0,0,w,h);
+      for(var i=0;i<items.length;i++){
+        var it=items[i];it.x+=it.drift.x;it.y+=it.drift.y;
+        if(it.x<-60)it.x=w+60;if(it.x>w+60)it.x=-60;if(it.y<-60)it.y=h+60;if(it.y>h+60)it.y=-60;
+        var a=0.025+Math.sin(time*it.speed+it.phase)*0.01;
+        ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba('+it.color+',1)';ctx.lineWidth=1;ctx.lineCap='round';
+        var s=it.size,cx=it.x,cy=it.y;
+        if(it.type===0){// wireframe box with header+content
+          ctx.beginPath();rr(cx-s/2,cy-s*0.6,s,s*1.2,3);ctx.stroke();
+          ctx.fillStyle='rgba('+it.color+',0.3)';ctx.fillRect(cx-s/2+3,cy-s*0.6+3,s-6,s*0.25);
+          for(var ln=0;ln<3;ln++){ctx.fillStyle='rgba('+it.color+',0.2)';ctx.fillRect(cx-s/2+4,cy-s*0.15+ln*6,s*0.6,1.5);}
+        }else if(it.type===1){// cursor arrow
+          ctx.beginPath();ctx.moveTo(cx,cy-s*0.4);ctx.lineTo(cx,cy+s*0.4);ctx.lineTo(cx+s*0.15,cy+s*0.25);ctx.lineTo(cx+s*0.3,cy+s*0.45);ctx.moveTo(cx,cy-s*0.4);ctx.lineTo(cx+s*0.3,cy+s*0.05);ctx.stroke();
+        }else if(it.type===2){// color swatches row
+          for(var sw=0;sw<4;sw++){ctx.fillStyle=sw<2?'rgba(53,117,212,0.3)':'rgba(178,35,135,0.3)';ctx.beginPath();ctx.arc(cx-s*0.4+sw*s*0.25,cy,s*0.08,0,Math.PI*2);ctx.fill();}
+        }else if(it.type===3){// grid layout
+          ctx.beginPath();for(var gx=0;gx<4;gx++){ctx.moveTo(cx-s/2+gx*s/3,cy-s*0.4);ctx.lineTo(cx-s/2+gx*s/3,cy+s*0.4);}
+          for(var gy=0;gy<4;gy++){ctx.moveTo(cx-s/2,cy-s*0.4+gy*s*0.27);ctx.lineTo(cx+s/2,cy-s*0.4+gy*s*0.27);}ctx.stroke();
+        }else if(it.type===4){// Aa typography
+          ctx.font='bold '+(s*0.5)+'px Figtree,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+          ctx.fillStyle='rgba('+it.color+',1)';ctx.fillText('Aa',cx,cy);
+        }else{// stacked layers
+          for(var ly=0;ly<3;ly++){ctx.globalAlpha=a*(1-ly*0.25);ctx.beginPath();rr(cx-s*0.4+ly*4,cy-s*0.3+ly*5,s*0.7,s*0.45,2);ctx.stroke();}
+        }
+        ctx.restore();
+      }
+    }
+    resize();draw();
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(resize,150);});
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(initAnim,100)});}else{setTimeout(initAnim,100);}
 })();
 </script>
 

@@ -411,7 +411,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
       for(var i=0;i<items.length;i++){
         var it=items[i];it.x+=it.drift.x;it.y+=it.drift.y;
         if(it.x<-60)it.x=w+60;if(it.x>w+60)it.x=-60;if(it.y<-60)it.y=h+60;if(it.y>h+60)it.y=-60;
-        var a=0.025+Math.sin(time*it.speed+it.phase)*0.01;
+        var a=0.08+Math.sin(time*it.speed+it.phase)*0.03;
         ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='rgba('+it.color+',1)';ctx.lineWidth=1;ctx.lineCap='round';
         var s=it.size,cx=it.x,cy=it.y;
         if(it.type===0){// wireframe box with header+content

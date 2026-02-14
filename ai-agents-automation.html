@@ -414,7 +414,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
     // Simple icons inside nodes
     function drawIcon(x,y,type,alpha){
       ctx.save();
-      ctx.globalAlpha=alpha*0.15;
+      ctx.globalAlpha=alpha*0.45;
       ctx.strokeStyle='#fff';
       ctx.lineWidth=1.5;
       ctx.lineCap='round';
@@ -448,7 +448,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
         ctx.beginPath();
         ctx.moveTo(p.x1,p.y1);
         ctx.bezierCurveTo(p.cx1,p.cy1,p.cx2,p.cy2,p.x2,p.y2);
-        ctx.strokeStyle='rgba(53,117,212,0.03)';
+        ctx.strokeStyle='rgba(53,117,212,0.1)';
         ctx.lineWidth=mobile?1.5:2;
         ctx.stroke();
       }
@@ -456,12 +456,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
       // Draw nodes (n8n-style rounded rectangles)
       for(var i=0;i<nodes.length;i++){
         var n=nodes[i];
-        var pulse=0.02+Math.sin(time*0.8+n.phase)*0.008;
+        var pulse=0.07+Math.sin(time*0.8+n.phase)*0.025;
         var nx=n.x-n.w/2,ny=n.y-n.h/2;
 
         // Node shadow/glow
         ctx.save();
-        ctx.shadowColor=n.color==='magenta'?'rgba(178,35,135,0.035)':'rgba(53,117,212,0.035)';
+        ctx.shadowColor=n.color==='magenta'?'rgba(178,35,135,0.12)':'rgba(53,117,212,0.12)';
         ctx.shadowBlur=12;
 
         // Rounded rectangle
@@ -476,7 +476,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
         ctx.fillStyle=n.color==='magenta'?'rgba(178,35,135,'+pulse+')':'rgba(53,117,212,'+pulse+')';
         ctx.fill();
 
-        ctx.strokeStyle=n.color==='magenta'?'rgba(178,35,135,'+(pulse+0.02)+')':'rgba(53,117,212,'+(pulse+0.02)+')';
+        ctx.strokeStyle=n.color==='magenta'?'rgba(178,35,135,'+(pulse+0.06)+')':'rgba(53,117,212,'+(pulse+0.06)+')';
         ctx.lineWidth=1.5;
         ctx.stroke();
         ctx.restore();
@@ -485,15 +485,15 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
         var dotR=mobile?2.5:3;
         if(n.col>0){
           ctx.beginPath();ctx.arc(nx,n.y,dotR,0,Math.PI*2);
-          ctx.fillStyle='rgba(53,117,212,'+(pulse+0.03)+')';ctx.fill();
+          ctx.fillStyle='rgba(53,117,212,'+(pulse+0.1)+')';ctx.fill();
         }
         if(n.col<(mobile?3:5)){
           ctx.beginPath();ctx.arc(nx+n.w,n.y,dotR,0,Math.PI*2);
-          ctx.fillStyle='rgba(53,117,212,'+(pulse+0.03)+')';ctx.fill();
+          ctx.fillStyle='rgba(53,117,212,'+(pulse+0.1)+')';ctx.fill();
         }
 
         // Icon inside node
-        drawIcon(n.x,n.y,n.icon,pulse+0.05);
+        drawIcon(n.x,n.y,n.icon,pulse+0.15);
       }
 
       // Draw flowing data dots
@@ -503,12 +503,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
         if(dot.t>1)dot.t-=1;
         var p=getEdgePath(edges[dot.edge]);
         var pt=bezierPoint(p,dot.t);
-        var glow=0.08+Math.sin(time*2+dot.phase)*0.03;
+        var glow=0.25+Math.sin(time*2+dot.phase)*0.1;
 
         // Glow
         ctx.beginPath();ctx.arc(pt.x,pt.y,dot.size*2.5,0,Math.PI*2);
         var grad=ctx.createRadialGradient(pt.x,pt.y,0,pt.x,pt.y,dot.size*2.5);
-        grad.addColorStop(0,'rgba(178,35,135,'+(glow*0.15)+')');
+        grad.addColorStop(0,'rgba(178,35,135,'+(glow*0.45)+')');
         grad.addColorStop(1,'rgba(178,35,135,0)');
         ctx.fillStyle=grad;ctx.fill();
 

@@ -1338,7 +1338,7 @@
         if(b.x<-b.w)b.x=w+b.w;if(b.x>w+b.w)b.x=-b.w;
         if(b.y<-b.h)b.y=h+b.h;if(b.y>h+b.h)b.y=-b.h;
 
-        var pulse=0.02+Math.sin(time*b.speed+b.phase)*0.008;
+        var pulse=0.07+Math.sin(time*b.speed+b.phase)*0.025;
         var bx=b.x,by=b.y;
         var isM=b.color==='magenta';
         var col=isM?'178,35,135':'53,117,212';
@@ -1353,10 +1353,10 @@
         ctx.lineTo(bx,by+b.r);ctx.arcTo(bx,by,bx+b.r,by,b.r);ctx.closePath();
 
         ctx.fillStyle='rgba('+col+','+pulse+')';ctx.fill();
-        ctx.strokeStyle='rgba('+col+','+(pulse+0.02)+')';ctx.lineWidth=1;ctx.stroke();
+        ctx.strokeStyle='rgba('+col+','+(pulse+0.06)+')';ctx.lineWidth=1;ctx.stroke();
 
         // Inner content hints based on block type
-        ctx.globalAlpha=pulse+0.015;
+        ctx.globalAlpha=pulse+0.05;
         if(b.type===0){// Text lines
           for(var ln=0;ln<3;ln++){
             var ly=by+8+ln*6;if(ly>by+b.h-4)break;
@@ -1387,7 +1387,7 @@
           ctx.fillRect(bx+6,by+split+4,b.w*0.6,2);
           ctx.fillRect(bx+6,by+split+10,b.w*0.35,2);
         }else{// WordPress W logo block
-          drawW(bx+b.w/2,by+b.h/2,Math.min(b.w,b.h)*0.3,pulse+0.015);
+          drawW(bx+b.w/2,by+b.h/2,Math.min(b.w,b.h)*0.3,pulse+0.05);
         }
 
         ctx.restore();
@@ -1400,7 +1400,7 @@
         if(fl.x<-20)fl.x=w+20;if(fl.x>w+20)fl.x=-20;
         if(fl.y<-20){fl.y=h+20;}if(fl.y>h+20)fl.y=-20;
 
-        var a=0.03+Math.sin(time*fl.speed+fl.phase)*0.012;
+        var a=0.1+Math.sin(time*fl.speed+fl.phase)*0.04;
 
         if(fl.type===0)drawCart(fl.x,fl.y,fl.size,a);
         else if(fl.type===1)drawW(fl.x,fl.y,fl.size,a);

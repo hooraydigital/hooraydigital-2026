@@ -99,14 +99,20 @@ section { padding: 6rem 4rem; }
 .contact-response h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; color: var(--blue); }
 .contact-response p { color: var(--grey); font-size: .95rem; line-height: 1.6; }
 
-footer { padding: 3rem 4rem; border-top: 1px solid rgba(53,117,212,.1); display: flex; justify-content: space-between; align-items: center; }
-.fl { display: flex; align-items: center; gap: 2rem; }
-.flogo { height: 80px; width: auto; aspect-ratio: 423 / 268; opacity: .6; }
-footer p { color: var(--grey); font-size: .95rem; font-weight: 500; }
+footer { padding: 3.5rem 4rem 2rem; border-top: 1px solid rgba(53,117,212,.1); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+.flogo { height: 70px; width: auto; aspect-ratio: 423 / 268; opacity: .6; margin-bottom: 1rem; }
+.footer-tagline { color: var(--grey); font-size: .95rem; line-height: 1.6; margin-bottom: 1rem; }
+.footer-email { color: var(--blue); text-decoration: none; font-weight: 500; font-size: .95rem; transition: opacity .3s; }
+.footer-email:hover { opacity: .7; }
+.footer-col h4 { color: var(--white); font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 1rem; }
+.footer-col a { display: block; color: var(--grey); text-decoration: none; font-size: .95rem; font-weight: 500; padding: .3rem 0; transition: color .3s, padding-left .3s; }
+.footer-col a:hover { color: var(--blue); padding-left: .3rem; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(53,117,212,.06); }
+footer .footer-bottom p { color: var(--grey); font-size: .85rem; font-weight: 500; }
 .flinks { display: flex; gap: 1.5rem; }
-.flinks a { color: var(--grey); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color .3s, transform .3s; }
-.flinks a:hover { color: var(--blue); transform: translateY(-1px); }
-.flinks a:active { transform: scale(.95); transition: transform .08s; }
+.flinks a { color: var(--grey); text-decoration: none; font-size: .9rem; font-weight: 500; transition: color .3s; }
+.flinks a:hover { color: var(--blue); }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
@@ -140,8 +146,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 .nav-toggle.active span:nth-child(2) { opacity: 0; }
 .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5.5px); }
 
-@media(max-width:1024px) { nav{padding:1.2rem 2rem} section{padding:4rem 2rem} .contact-hero{padding:9rem 2rem 3rem} .contact-grid{grid-template-columns:1fr;gap:3rem} footer{flex-direction:column;gap:1.5rem;text-align:center} .fl{flex-direction:column;gap:.75rem} }
+@media(max-width:1024px) { nav{padding:1.2rem 2rem} section{padding:4rem 2rem} .contact-hero{padding:9rem 2rem 3rem} .contact-grid{grid-template-columns:1fr;gap:3rem} footer{padding:2.5rem 2rem 1.5rem} .footer-grid{grid-template-columns:1fr 1fr;gap:2rem} .footer-bottom{flex-direction:column;gap:1rem;text-align:center} }
 @media(max-width:640px) {
+.footer-grid{grid-template-columns:1fr;gap:1.5rem}
   html { scroll-padding-top: 80px; }
   .nav-toggle { display: block; }
   .nav-links {
@@ -276,8 +283,9 @@ a:focus-visible, button:focus-visible, select:focus-visible, .nav-cta:focus-visi
 </div>
 
 <footer>
-  <div class="fl">
-    <svg viewBox="0 0 423 268" fill="none" xmlns="http://www.w3.org/2000/svg" class="flogo" aria-label="Hooray Digital">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <svg viewBox="0 0 423 268" fill="none" xmlns="http://www.w3.org/2000/svg" class="flogo" aria-label="Hooray Digital">
 <path d="M370.146 114.792C367.464 114.792 364.614 114.289 361.596 113.283C358.663 112.277 356.19 111.188 354.178 110.014L361.471 94.0465C362.644 94.8847 363.776 95.5134 364.865 95.9325C366.039 96.3516 367.087 96.5611 368.009 96.5611C369.601 96.5611 371.026 96.142 372.283 95.3038C373.541 94.5494 374.547 93.2921 375.301 91.5319L382.719 74.0554L401.202 25.2719H422.953L395.166 91.9091C393.322 96.4354 391.395 100.417 389.383 103.854C387.371 107.29 384.857 109.972 381.839 111.9C378.905 113.828 375.008 114.792 370.146 114.792ZM377.564 88.1372L348.143 25.2719H369.895L389.634 74.0554L396.298 88.1372H377.564Z" fill="#3575D4"/>
 <path d="M325.834 88.1373L325.205 74.5584V56.8304C325.205 53.4775 324.912 50.5438 324.325 48.0292C323.822 45.5146 322.775 43.5867 321.182 42.2456C319.673 40.8206 317.452 40.1082 314.518 40.1082C312.171 40.1082 310.118 40.653 308.357 41.7427C306.597 42.8323 305.088 44.2992 303.831 46.1432L286.606 40.4854C288.115 37.384 290.085 34.576 292.515 32.0614C295.03 29.5468 298.089 27.5351 301.694 26.0263C305.298 24.5176 309.489 23.7632 314.267 23.7632C320.805 23.7632 326.337 24.9786 330.863 27.4094C335.39 29.8402 338.784 33.2349 341.047 37.5936C343.311 41.9522 344.442 47.1072 344.442 53.0584L344.191 88.1373H325.834ZM308.609 89.6461C301.233 89.6461 295.491 88.0116 291.384 84.7426C287.277 81.3898 285.223 76.612 285.223 70.4093C285.223 63.7875 287.36 58.842 291.635 55.573C295.91 52.3041 301.903 50.6696 309.615 50.6696H326.84V63.3684H316.907C312.8 63.3684 309.824 63.9551 307.98 65.1286C306.136 66.2182 305.214 67.8108 305.214 69.9063C305.214 71.4151 305.885 72.6305 307.226 73.5525C308.651 74.3907 310.579 74.8098 313.009 74.8098C315.44 74.8098 317.536 74.3069 319.296 73.3011C321.14 72.2114 322.565 70.7865 323.571 69.0262C324.66 67.266 325.205 65.38 325.205 63.3684H330.235C330.235 71.6666 328.432 78.1208 324.828 82.7309C321.308 87.341 315.901 89.6461 308.609 89.6461Z" fill="#3575D4"/>
 <path d="M252.855 55.5734C252.855 48.784 254.196 43.1261 256.879 38.5998C259.645 34.0735 263.081 30.6788 267.189 28.4156C271.38 26.1525 275.738 25.0209 280.265 25.0209V44.1319C276.409 44.1319 272.763 44.551 269.326 45.3892C265.973 46.2275 263.249 47.5267 261.153 49.2869C259.058 50.9633 258.01 53.1426 258.01 55.8249L252.855 55.5734ZM238.396 88.1377V25.2723H258.01V88.1377H238.396Z" fill="#3575D4"/>
@@ -317,12 +325,39 @@ a:focus-visible, button:focus-visible, select:focus-visible, .nav-cta:focus-visi
 </linearGradient>
 </defs>
 </svg>
-    <p>&copy; 2016-2026 Hooray Digital &mdash; Goals Scored with&nbsp;AI</p>
+      <p class="footer-tagline">Brisbane digital agency building AI-powered websites, e-commerce stores, and digital&nbsp;experiences.</p>
+      <a href="mailto:john@hooraydigital.com.au" class="footer-email">john@hooraydigital.com.au</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="/wordpress-woocommerce">WordPress &amp; WooCommerce</a>
+      <a href="/shopify-ecommerce">Shopify &amp; E-Commerce</a>
+      <a href="/ai-agents-automation">AI Agents &amp; Automation</a>
+      <a href="/web-design-ux">Web Design &amp; UX</a>
+      <a href="/seo-digital-marketing">SEO &amp; Digital Marketing</a>
+      <a href="/managed-hosting-performance">Managed Hosting</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/#about">About</a>
+      <a href="/our-work">Our Work</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://www.facebook.com/hooraydigital" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/hooraydigital" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://au.linkedin.com/company/hooray-digital" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
-  <div class="flinks">
-    <a href="https://www.facebook.com/hooraydigital" target="_blank" rel="noopener">Facebook</a>
-    <a href="https://www.instagram.com/hooraydigital" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://au.linkedin.com/company/hooray-digital" target="_blank" rel="noopener">LinkedIn</a>
+  <div class="footer-bottom">
+    <p>&copy; 2016-2026 Hooray Digital &mdash; Goals Scored with&nbsp;AI</p>
+    <div class="flinks">
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/sitemap.xml">Sitemap</a>
+    </div>
   </div>
 </footer>
 

@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#3575D4">
+  <link rel="canonical" href="https://hooraydigital.au/blog/how-do-i-use-ai-in-my-business">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://hooraydigital.au/blog/how-do-i-use-ai-in-my-business">
+  <meta property="og:title" content="How Do I Use AI in My Business? | Hooray Digital">
+  <meta property="og:description" content="Practical ways small and medium businesses can leverage AI today — from chatbots and workflow automation to content creation and data analytics.">
+  <meta property="og:image" content="https://hooraydigital.au/img/hooray-digital-og.png">
+  <meta property="og:site_name" content="Hooray Digital">
+  <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Do I Use AI in My Business? | Hooray Digital">
+  <meta name="twitter:description" content="Practical ways small and medium businesses can leverage AI today — from chatbots and workflow automation to content creation and data analytics.">
+  <meta name="twitter:image" content="https://hooraydigital.au/img/hooray-digital-og.png">
 <title>How Do I Use AI in My Business? | Hooray Digital</title>
 <meta name="description" content="Practical ways small and medium businesses can leverage AI today — from chatbots and workflow automation to content creation and data analytics.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -167,9 +179,16 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   section { padding: 3rem 1.5rem; }
   footer { padding: 2rem 1.5rem; }
 }
+
+a:focus-visible, button:focus-visible, select:focus-visible, .nav-cta:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(53,117,212,.35); border-radius: 6px; }
+.btn-p:focus-visible, .btn-o:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(53,117,212,.35), 0 4px 16px rgba(53,117,212,.2); }
+.skip-link { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); background: var(--blue); color: #fff; padding: .75rem 1.5rem; border-radius: 0 0 8px 8px; font-weight: 600; z-index: 200; transition: top .2s; text-decoration: none; } .skip-link:focus { top: 0; }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How Do I Use AI in My Business?","description":"Practical ways small and medium businesses can leverage AI today \u2014 from chatbots and workflow automation to content creation and data analytics.","datePublished":"2026-02-01","dateModified":"2026-02-15","author":{"@type":"Organization","name":"Hooray Digital","url":"https://hooraydigital.au"},"publisher":{"@type":"Organization","name":"Hooray Digital","url":"https://hooraydigital.au","logo":{"@type":"ImageObject","url":"https://hooraydigital.au/img/hooray-digital-og.png"}},"mainEntityOfPage":"https://hooraydigital.au/blog/how-do-i-use-ai-in-my-business"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hooraydigital.au/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://hooraydigital.au/blog"},{"@type":"ListItem","position":3,"name":"How Do I Use AI in My Business?","item":"https://hooraydigital.au/blog/how-do-i-use-ai-in-my-business"}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 <nav>
   <a href="/"><svg viewBox="0 0 423 268" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-img" aria-label="Hooray Digital">
 <path d="M370.146 114.792C367.464 114.792 364.614 114.289 361.596 113.283C358.663 112.277 356.19 111.188 354.178 110.014L361.471 94.0465C362.644 94.8847 363.776 95.5134 364.865 95.9325C366.039 96.3516 367.087 96.5611 368.009 96.5611C369.601 96.5611 371.026 96.142 372.283 95.3038C373.541 94.5494 374.547 93.2921 375.301 91.5319L382.719 74.0554L401.202 25.2719H422.953L395.166 91.9091C393.322 96.4354 391.395 100.417 389.383 103.854C387.371 107.29 384.857 109.972 381.839 111.9C378.905 113.828 375.008 114.792 370.146 114.792ZM377.564 88.1372L348.143 25.2719H369.895L389.634 74.0554L396.298 88.1372H377.564Z" fill="#3575D4"/>
@@ -232,7 +251,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   </div>
 </nav>
 
-<section class="service-hero">
+<section id="main" class="service-hero">
   <canvas id="hero-canvas"></canvas>
   <div class="stag reveal">Blog</div>
   <h1 class="reveal">How Do I Use <span class="hl">AI</span> in My Business?</h1>
@@ -472,8 +491,9 @@ document.querySelectorAll('.nav-links a:not(.nav-dropdown-trigger)').forEach(fun
       }
     }
     var time=0;
+    var prefersReducedMotion=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     function draw(){
-      requestAnimationFrame(draw);time+=0.016;ctx.clearRect(0,0,w,h);
+      if(!prefersReducedMotion)requestAnimationFrame(draw);time+=0.016;ctx.clearRect(0,0,w,h);
       for(var i=0;i<items.length;i++){
         var it=items[i];it.x+=it.drift.x;it.y+=it.drift.y;
         if(it.x<-60)it.x=w+60;if(it.x>w+60)it.x=-60;if(it.y<-60)it.y=h+60;if(it.y>h+60)it.y=-60;

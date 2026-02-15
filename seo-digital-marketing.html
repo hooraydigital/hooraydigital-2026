@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#3575D4">
+  <link rel="canonical" href="https://hooraydigital.au/seo-digital-marketing">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hooraydigital.au/seo-digital-marketing">
+  <meta property="og:title" content="SEO & Digital Marketing Brisbane | Hooray Digital">
+  <meta property="og:description" content="Brisbane SEO and digital marketing powered by AI. Technical audits, keyword research, and content strategy that gets your site ranking from day one.">
+  <meta property="og:image" content="https://hooraydigital.au/img/hooray-digital-og.png">
+  <meta property="og:site_name" content="Hooray Digital">
+  <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SEO & Digital Marketing Brisbane | Hooray Digital">
+  <meta name="twitter:description" content="Brisbane SEO and digital marketing powered by AI. Technical audits, keyword research, and content strategy that gets your site ranking from day one.">
+  <meta name="twitter:image" content="https://hooraydigital.au/img/hooray-digital-og.png">
 <title>SEO &amp; Digital Marketing Brisbane | Hooray Digital</title>
 <meta name="description" content="Brisbane SEO and digital marketing powered by AI. Technical audits, keyword research, and content strategy that gets your site ranking from day one.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -173,9 +185,15 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   .ctab { margin: 1.5rem; padding: 3rem 1.5rem; }
 }
 @media(prefers-reduced-motion:reduce) { .reveal { opacity: 1; transform: none; transition: none; } .hl, .stag::before { animation: none; } }
+
+a:focus-visible, button:focus-visible, select:focus-visible, .nav-cta:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(53,117,212,.35); border-radius: 6px; }
+.btn-p:focus-visible, .btn-o:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(53,117,212,.35), 0 4px 16px rgba(53,117,212,.2); }
+.skip-link { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); background: var(--blue); color: #fff; padding: .75rem 1.5rem; border-radius: 0 0 8px 8px; font-weight: 600; z-index: 200; transition: top .2s; text-decoration: none; } .skip-link:focus { top: 0; }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hooraydigital.au/"},{"@type":"ListItem","position":2,"name":"SEO & Digital Marketing","item":"https://hooraydigital.au/seo-digital-marketing"}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <nav>
   <a href="/"><svg viewBox="0 0 423 268" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-img" aria-label="Hooray Digital">
@@ -239,7 +257,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   </div>
 </nav>
 
-<section class="service-hero">
+<section id="main" class="service-hero">
   <canvas id="hero-canvas"></canvas>
   <div class="stag reveal">SEO &amp; Digital Marketing</div>
   <h1 class="reveal">SEO &amp; Digital Marketing <span class="hl">Strategy</span></h1>
@@ -392,8 +410,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
       }
     }
     var time=0;
+    var prefersReducedMotion=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     function draw(){
-      requestAnimationFrame(draw);time+=0.016;ctx.clearRect(0,0,w,h);
+      if(!prefersReducedMotion)requestAnimationFrame(draw);time+=0.016;ctx.clearRect(0,0,w,h);
       for(var i=0;i<items.length;i++){
         var it=items[i];it.x+=it.drift.x;it.y+=it.drift.y;
         if(it.x<-60)it.x=w+60;if(it.x>w+60)it.x=-60;if(it.y<-60)it.y=h+60;if(it.y>h+60)it.y=-60;

@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#3575D4">
+  <link rel="canonical" href="https://hooraydigital.au/thank-you">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hooraydigital.au/thank-you">
+  <meta property="og:title" content="Thank You | Hooray Digital">
+  <meta property="og:description" content="Brisbane digital agency building AI-powered websites, e-commerce stores, and digital experiences.">
+  <meta property="og:image" content="https://hooraydigital.au/img/hooray-digital-og.png">
+  <meta property="og:site_name" content="Hooray Digital">
+  <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thank You | Hooray Digital">
+  <meta name="twitter:description" content="Brisbane digital agency building AI-powered websites, e-commerce stores, and digital experiences.">
+  <meta name="twitter:image" content="https://hooraydigital.au/img/hooray-digital-og.png">
 <title>Thank You | Hooray Digital</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -172,9 +184,14 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   .form-row { grid-template-columns: 1fr; }
 }
 @media(prefers-reduced-motion:reduce) { .reveal { opacity: 1; transform: none; transition: none; } .hl, .stag::before { animation: none; } }
+
+a:focus-visible, button:focus-visible, select:focus-visible, .nav-cta:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(53,117,212,.35); border-radius: 6px; }
+.btn-p:focus-visible, .btn-o:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(53,117,212,.35), 0 4px 16px rgba(53,117,212,.2); }
+.skip-link { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); background: var(--blue); color: #fff; padding: .75rem 1.5rem; border-radius: 0 0 8px 8px; font-weight: 600; z-index: 200; transition: top .2s; text-decoration: none; } .skip-link:focus { top: 0; }
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <nav>
   <a href="/"><svg viewBox="0 0 423 268" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-img" aria-label="Hooray Digital">
@@ -238,7 +255,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   </div>
 </nav>
 
-<section class="contact-hero" style="text-align:center;">
+<section id="main" class="contact-hero" style="text-align:center;">
   <div class="stag reveal">Enquiry Received</div>
   <h1 class="stitle reveal">Thank You <span class="hl">&#9917;</span></h1>
   <p class="ssub reveal" style="max-width:540px;margin:0 auto 2rem;">We&rsquo;ve received your enquiry and will get back to you within 24&nbsp;hours. In the meantime, feel free to explore what we&nbsp;do.</p>

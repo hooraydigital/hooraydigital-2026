@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#3575D4">
+  <link rel="canonical" href="https://hooraydigital.au/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hooraydigital.au/contact">
+  <meta property="og:title" content="Contact Us | Hooray Digital — Brisbane Digital Agency">
+  <meta property="og:description" content="Get in touch with Hooray Digital, Brisbane's AI-powered digital agency. Tell us about your project and we'll get back to you within 24 hours.">
+  <meta property="og:image" content="https://hooraydigital.au/img/hooray-digital-og.png">
+  <meta property="og:site_name" content="Hooray Digital">
+  <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us | Hooray Digital — Brisbane Digital Agency">
+  <meta name="twitter:description" content="Get in touch with Hooray Digital, Brisbane's AI-powered digital agency. Tell us about your project and we'll get back to you within 24 hours.">
+  <meta name="twitter:image" content="https://hooraydigital.au/img/hooray-digital-og.png">
 <title>Contact Us | Hooray Digital — Brisbane Digital Agency</title>
 <meta name="description" content="Get in touch with Hooray Digital, Brisbane's AI-powered digital agency. Tell us about your project and we'll get back to you within 24 hours.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -172,9 +184,15 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   .form-row { grid-template-columns: 1fr; }
 }
 @media(prefers-reduced-motion:reduce) { .reveal { opacity: 1; transform: none; transition: none; } .hl, .stag::before { animation: none; } }
+
+a:focus-visible, button:focus-visible, select:focus-visible, .nav-cta:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(53,117,212,.35); border-radius: 6px; }
+.btn-p:focus-visible, .btn-o:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(53,117,212,.35), 0 4px 16px rgba(53,117,212,.2); }
+.skip-link { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); background: var(--blue); color: #fff; padding: .75rem 1.5rem; border-radius: 0 0 8px 8px; font-weight: 600; z-index: 200; transition: top .2s; text-decoration: none; } .skip-link:focus { top: 0; }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hooraydigital.au/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://hooraydigital.au/contact"}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <nav>
   <a href="/"><svg viewBox="0 0 423 268" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-img" aria-label="Hooray Digital">
@@ -238,7 +256,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   </div>
 </nav>
 
-<section class="contact-hero">
+<section id="main" class="contact-hero">
   <div class="stag reveal">Contact Us</div>
   <h1 class="reveal">Let&rsquo;s Score Your Next <span class="hl">Goal</span></h1>
   <p class="ssub reveal">Tell us about your project and we&rsquo;ll get back to you within 24 hours. No sales pitch &mdash; just a straight conversation about how we can&nbsp;help.</p>
@@ -250,6 +268,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
       <input type="hidden" name="_subject" value="New enquiry from Hooray Digital website">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://hooraydigital.au/thank-you">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
         <div class="form-group reveal">
           <label for="name">Your Name</label>

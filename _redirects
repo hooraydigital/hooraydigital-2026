@@ -22,8 +22,8 @@
 /digital-marketing-brisbane                           /seo-digital-marketing      301
 /ai-integration-specialist/                           /ai-agents-automation       301
 /ai-integration-specialist                            /ai-agents-automation       301
-/website-design-blog/                                 /                           301
-/website-design-blog                                  /                           301
-/website-design-blog/*                                /                           301
+/website-design-blog/                                 /blog                       301
+/website-design-blog                                  /blog                       301
+/website-design-blog/*                                /blog                       301
 /privacy-policy/                                      /                           301
 /privacy-policy                                       /                           301
